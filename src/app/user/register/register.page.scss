@@ -1,0 +1,38 @@
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+}
+.mid{
+   margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.header{
+    font-family: Staatliches-Regular !important;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: calc(5vw - 12px);
+}
+
+.btnReg{
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+ion-card{
+    display: flex;
+    flex-direction: column;
+    width: 90% !important;
+    margin: 0 !important;
+  }
+
+ion-content{
+    --background: var(--ion-color-danger);
+}
