@@ -1,18 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Dashboard</ion-title>
+  <ion-toolbar class="back">
+    <ion-buttons  slot="start">
+      <ion-back-button  class="btnBack" defaultHref="home">
+      </ion-back-button>
+      <ion-title>
+        Dashboard
+    </ion-title>
+    <ion-icon class="header-icon" slot="end" name="analytics"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+
    <!-- fab placed to the bottom end -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
-      <ion-icon name="add" [routerLink]="['/create-transact']"></ion-icon>
+      <ion-icon name="add" [routerLink]="['/add-transact']"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <ion-card>
+  <ion-card style="margin-top: 15px;">
+
     <ion-card-header>
       <ion-card-title>Quick Estimate</ion-card-title>
     </ion-card-header>
@@ -71,7 +79,7 @@
           <ion-button shape="round">Edit</ion-button>
         </ion-item>
       </ion-list>
-      <ion-button fill="clear" size="small">See more..</ion-button>
+      <ion-button class="none" fill="clear" size="small">See more..</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

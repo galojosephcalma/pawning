@@ -18,7 +18,9 @@ export class RegisterPage {
     public toastCtrl: ToastController,
     private router: Router
   ) { }
-
+  goLogin(){
+    this.router.navigate(['/login']);
+  }
   async addUser(){
     if (this.fname==""){
       const toast = await this.toastCtrl.create({
@@ -74,6 +76,7 @@ export class RegisterPage {
     });
     toast.present();
   })
+  
 }
 }
 

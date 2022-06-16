@@ -1,0 +1,47 @@
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+}
+.mid{
+   margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header{
+    height: 5%;
+    font-family: Staatliches-Regular !important;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: calc(5vw - 12px);
+}
+
+.btnReg{
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.header-icon{
+    color:white;
+}
+.none{
+   --background: clear;
+}
+
+
+ion-title{
+    color:white;
+   
+}
+ion-button{
+    --background:var(--ion-color-danger);
+}
+ion-content{
+    --background: var(--ion-color-danger);
+}
