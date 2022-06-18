@@ -34,6 +34,10 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () => import('./manage_transaction/list/list.module').then( m => m.ListPageModule)
   },
+  {
+    path: 'active-loans',
+    loadChildren: () => import('./active-loans/active-loans.module').then( m => m.ActiveLoansPageModule)
+  },
 
 ];
 

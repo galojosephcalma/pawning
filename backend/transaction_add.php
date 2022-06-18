@@ -3,21 +3,19 @@ include "config.php";
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 $message = array();
-$c_name = $data['client_name'];
-$address = $data['address'];
-$phone = $data['phone'];
+$account_number = $data['account_number'];
+$load_date = date('Y-m-d');
+$due_date = date('Y-m-d', strtotime('+1 month'));
 $appearance = $data['appearance'];
 $jewelry = $data['jewelry'];
 $weight = $data['weight'];
-$net_weight = $data['net_weight'];
-$quantity = $data['quantity'];
-$value_assesees = $data['value_assesees'];
+$test = $data['test'];
 $karatage = $data['karatage'];
 $market_value = $data['market_value'];
 $max_amount = $data['max_amount'];
-$test = $data['test'];
+$monthly_interest = $data['monthly_interest'];
 
-$q = mysqli_query($con, "INSERT INTO `transaction` (`id`, `client_name`, `address`, `phone`, `Jewelry`, `Apperance`, `Weight`, `Net Weight`, `Qty`, `Value Assesees`, `Karatage`, `Market Value`, `Maximum Amount for Article`, `Test`) VALUES (NULL, '$c_name', '$address', '$phone', '$jewelry', '$appearance', '$weight', '$net_weight', '$quantity', '$value_assesees', '$karatage', '$market_value', '$max_amount', '$test');");
+$q = mysqli_query($con, "INSERT INTO `transaction` (`id`, `Account_number`, `Loan_date`, `Due_date`, `Jewelry`, `Apperance`, `Weight`, `Test`, `Karatage`, `Market_value`, `Maximum_amount`, `Monthly_interest`) VALUES (NULL, '$account_number', '$load_date', '$due_date', '$jewelry', '$appearance', '$weight', '$test', '$karatage', '$market_value ', '$max_amount', '$monthly_interest');");
 
 if($q){
     http_response_code(201);
