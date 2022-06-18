@@ -17,6 +17,12 @@ export class ApiService {
   addUser(data){
     return this.http.post('http://localhost/pawning/register_users.php', data);
   }
+  addTransact(data){
+    return this.http.post('http://localhost/pawning/transaction_add.php', data);
+  }
+  addPayment(data){
+    return this.http.post('http://localhost/pawning/add_payment.php', data);
+  }
   login(username){
     return this.http.get('http://localhost/pawning/login_users.php?username='+username);
   }
@@ -32,14 +38,19 @@ export class ApiService {
   getKaratage(){
     return this.http.get('http://localhost/pawning/karatage_list.php');
   }
-  addTransact(data){
-    return this.http.post('http://localhost/pawning/transaction_add.php', data);
-  }
   getTransactions(){
     return this.http.get('http://localhost/pawning/transaction_list.php');
   }
   getAllTransactions(){
     return this.http.get('http://localhost/pawning/transactionAll_list.php');
   }
-
+  getSingleTransactions(id){
+    return this.http.get('http://localhost/pawning/singleTransaction.php?id='+id);
+  }
+  getPayments(id){
+    return this.http.get('http://localhost/pawning/payments.php?id='+id);
+  }
+  updateTransaction(id, data){
+    return this.http.put('http://localhost/pawning/updateTransaction.php?id='+id, data);
+  }
 }

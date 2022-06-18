@@ -28,9 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./manage_transaction/add-transact/add-transact.module').then( m => m.AddTransactPageModule)
   },
   {
-    path: 'modify',
+    path: 'modify/:id',
     loadChildren: () => import('./manage_transaction/modify/modify.module').then( m => m.ModifyPageModule)
-  },  {
+  },
+  {
     path: 'list',
     loadChildren: () => import('./manage_transaction/list/list.module').then( m => m.ListPageModule)
   },

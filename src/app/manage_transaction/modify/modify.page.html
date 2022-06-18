@@ -5,5 +5,50 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Transaction Id: {{ id }}</ion-card-subtitle>
+      <ion-card-title>{{ item }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Client: {{ lastname }}, {{ firstname }} <br>
+      Remaining Balance: {{ market_value }} <br>
+      Monthly Interest: {{ monthly_interest }} <br>
+      Due Date: {{ due_date }} <br>
+      <ion-button>Mark as Fully paid</ion-button>
+    </ion-card-content>
 
+  </ion-card>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label position="fixed">Date</ion-label>
+        <ion-input [(ngModel)]="payment_date" type="date"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Monthly Interest</ion-label>
+        <ion-input [(ngModel)]="paid_interest" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Jewelry Amount</ion-label>
+        <ion-input [(ngModel)]="paid_jewelry_amount" type="number" placeholder="Deduct monthly interest"></ion-input>
+      </ion-item>
+      <ion-button (click)="addPayment()">Add payment</ion-button>
+    </ion-list>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let p of payments">
+          <ion-label>
+            Date: {{ p.date }} <br>
+            Paid Amount: {{ p.paid_amount }} <br>
+            Paid Interest: {{ p.paid_interest }}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
