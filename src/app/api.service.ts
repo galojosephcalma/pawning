@@ -29,8 +29,14 @@ export class ApiService {
   getTest(){
     return this.http.get('http://localhost/pawning/testing_procedure_list.php');
   }
+  getKaratage(){
+    return this.http.get('http://localhost/pawning/karatage_list.php');
+  }
   addTransact(data){
     return this.http.post('http://localhost/pawning/transaction_add.php', data);
+  }
+  getTransactions(){
+    return this.http.get('http://localhost/pawning/transaction_list.php');
   }
 
 }

@@ -16,16 +16,8 @@
         Personal Details
       </ion-list-header>
       <ion-item>
-        <ion-label position="fixed">Client Name</ion-label>
-        <ion-input [(ngModel)]="client_name" type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="fixed">Address</ion-label>
-        <ion-input [(ngModel)]="address" type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="fixed">Phone number</ion-label>
-        <ion-input [(ngModel)]="phone" type="text"></ion-input>
+        <ion-label position="fixed">Account number</ion-label>
+        <ion-input [(ngModel)]="account_number" type="text"></ion-input>
       </ion-item>
     </ion-list>
   </ion-card-content>
@@ -46,6 +38,7 @@
           <ion-select-option *ngFor="let jewel of jewelry" [value]="jewel">{{ jewel.jewelry_type }}</ion-select-option>
         </ion-select>
       </ion-item>
+      
       <ion-item>
         <ion-label>Appearance</ion-label>
         <ion-select [compareWith]="compareWith" [(ngModel)]="item_appearance">
@@ -59,21 +52,6 @@
       </ion-item>
     
       <ion-item>
-        <ion-label position="fixed">Net Weight</ion-label>
-        <ion-input [(ngModel)]="net_weight" type="numeric"></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label position="fixed">Quantity</ion-label>
-        <ion-input [(ngModel)]="quantity" type="numeric"></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label position="fixed">Value Asseseess</ion-label>
-        <ion-input [(ngModel)]="value_assesees" type="numeric"></ion-input>
-      </ion-item>
-    
-      <ion-item>
         <ion-label>Testing Procedure</ion-label>
         <ion-select [compareWith]="compareWith" [(ngModel)]="item_test">
           <ion-select-option *ngFor="let tests of test" [value]="tests">{{ tests.procedure_type }}</ion-select-option>
@@ -81,8 +59,10 @@
       </ion-item>
     
       <ion-item>
-        <ion-label position="fixed">Karatage</ion-label>
-        <ion-input type="numeric" [(ngModel)]="karatage"></ion-input>
+        <ion-label>Karatage</ion-label>
+        <ion-select [compareWith]="compareWith" [(ngModel)]="item_karatage">
+          <ion-select-option *ngFor="let karat of karatage" [value]="karat.id">{{ karat.karatage_type }}</ion-select-option>
+        </ion-select>
       </ion-item>
     
       <ion-item>

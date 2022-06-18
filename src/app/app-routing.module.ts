@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'modify',
     loadChildren: () => import('./manage_transaction/modify/modify.module').then( m => m.ModifyPageModule)
+  },  {
+    path: 'list',
+    loadChildren: () => import('./manage_transaction/list/list.module').then( m => m.ListPageModule)
   },
+
 ];
 
 @NgModule({

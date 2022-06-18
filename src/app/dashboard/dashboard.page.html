@@ -28,21 +28,30 @@
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label>Diamond</ion-label>
-          <ion-icon name="arrow-forward-outline"></ion-icon>
+          <ion-label>Jewelry Type</ion-label>
+          <ion-select [compareWith]="compareWith" [(ngModel)]="item" placeholder="Select Jewelry">
+            <ion-select-option *ngFor="let jewel of jewelry" [value]="jewel.jewelry_type">{{ jewel.jewelry_type }}</ion-select-option>
+          </ion-select>
         </ion-item>
-      </ion-list>
-      <ion-list>
+
         <ion-item>
-          <ion-label>Gold</ion-label>
-          <ion-icon name="arrow-forward-outline"></ion-icon>
+          <ion-label position="fixed">Weight</ion-label>
+          <ion-input [(ngModel)]="weight" type="numeric" placeholder="Weight in grams"></ion-input>
         </ion-item>
-      </ion-list>
-      <ion-list>
+        
         <ion-item>
-          <ion-label>Silver</ion-label>
-          <ion-icon name="arrow-forward-outline"></ion-icon>
+          <ion-label>Karatage</ion-label>
+          <ion-select [compareWith]="compareWith" [(ngModel)]="item_karatage" placeholder="Select karat">
+            <ion-select-option *ngFor="let karat of karatage" [value]="karat.value">{{ karat.karatage_type }}</ion-select-option>
+          </ion-select>
         </ion-item>
+
+        <ion-item>
+          <ion-label position="fixed">Estimated Value</ion-label>
+          <ion-input type="numeric" [(ngModel)]="result"></ion-input>
+        </ion-item>
+        <ion-button id="btn-estimate" (click)="estimate()">Estimate</ion-button>
+
       </ion-list>
     </ion-card-content>
   </ion-card>
@@ -53,33 +62,12 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-item>
-          <ion-avatar>
-            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-          </ion-avatar>
-          <ion-label>Item 1</ion-label>
-          <ion-button shape="round">Edit</ion-button>
+        <ion-item *ngFor="let t of transaction">
+          <ion-label>{{ t.Loan_Date }} {{ t.Lastname }} ({{ t.Jewelry }})</ion-label>
+          <ion-button shape="round">Update</ion-button>
         </ion-item>
       </ion-list>
-      <ion-list>
-        <ion-item>
-          <ion-avatar>
-            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-          </ion-avatar>
-          <ion-label>Item 1</ion-label>
-          <ion-button shape="round">Edit</ion-button>
-        </ion-item>
-      </ion-list>
-      <ion-list>
-        <ion-item>
-          <ion-avatar>
-            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-          </ion-avatar>
-          <ion-label>Item 1</ion-label>
-          <ion-button shape="round">Edit</ion-button>
-        </ion-item>
-      </ion-list>
-      <ion-button class="none" fill="clear" size="small">See more..</ion-button>
+      <ion-button class="none" fill="clear" size="small" [routerLink]="['/list/']">See more..</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

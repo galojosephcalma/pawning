@@ -13,6 +13,8 @@ export class RegisterPage {
   lname: string = "";
   username: string = "";
   password: string = "";
+  address: string = "";
+  phone: string = "";
   constructor(
     public _apiService: ApiService,
     public toastCtrl: ToastController,
@@ -46,10 +48,24 @@ export class RegisterPage {
         duration: 2000
       });
       toast.present();
+    }else if (this.address==""){
+      const toast = await this.toastCtrl.create({
+        message:'Password is required',
+        duration: 2000
+      });
+      toast.present();
+    }else if (this.phone==""){
+      const toast = await this.toastCtrl.create({
+        message:'Password is required',
+        duration: 2000
+      });
+      toast.present();
     }else{
     let data = {
       fname: this.fname,
       lname: this.lname,
+      address: this.address,
+      phone_number: this.phone,
       username: this.username,
       password: this.password,
     }
