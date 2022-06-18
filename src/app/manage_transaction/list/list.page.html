@@ -1,9 +1,8 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>list</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <ion-card>
+    <ion-item *ngFor="let t of transaction">
+      <ion-label>{{ t.Loan_Date }}, {{ t.Lastname }}, {{ t.Jewelry }}</ion-label>
+      <ion-button fill="outline" slot="end">Update</ion-button>
+    </ion-item>
+  </ion-card>
 </ion-content>

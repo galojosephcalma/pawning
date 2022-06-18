@@ -38,5 +38,8 @@ export class ApiService {
   getTransactions(){
     return this.http.get('http://localhost/pawning/transaction_list.php');
   }
+  getAllTransactions(){
+    return this.http.get('http://localhost/pawning/transactionAll_list.php');
+  }
 
 }
