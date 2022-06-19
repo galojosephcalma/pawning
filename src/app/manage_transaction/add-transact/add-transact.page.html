@@ -16,7 +16,7 @@
         Personal Details
       </ion-list-header>
       <ion-item>
-        <ion-label position="fixed">Account number</ion-label>
+        <ion-label style="margin-right: 10px;" >Account number</ion-label>
         <ion-input [(ngModel)]="account_number" type="text"></ion-input>
       </ion-item>
     </ion-list>
@@ -71,12 +71,12 @@
       </ion-item>
     
       <ion-item>
-        <ion-label position="fixed">Maximum Amount</ion-label>
+        <ion-label style="margin-right: 10px;">Maximum Amount</ion-label>
         <ion-input type="numeric" [(ngModel)]="max_amount"></ion-input>
       </ion-item>
     </ion-list>
   </ion-card-content>
 </ion-card>
-<ion-button expand="block" (click)="add_transact()">Add</ion-button>
+<ion-button  expand="block" (click)="add_transact()">Add</ion-button>
 <!-- end -->
 </ion-content>

@@ -1,40 +1,46 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>modify</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Transactions List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Transaction Id: {{ id }}</ion-card-subtitle>
-      <ion-card-title>{{ item }}</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Client: {{ lastname }}, {{ firstname }} <br>
-      Remaining Balance: {{ market_value }} <br>
-      Monthly Interest: {{ monthly_interest }} <br>
-      Due Date: {{ due_date }} <br>
-      <ion-button>Mark as Fully paid</ion-button>
+    <ion-card-content style="color: black;">
+      <h2>Transaction ID: {{ id }}</h2>
+      <h2>Item: {{ item }}</h2>
+    <h3>Client: {{ lastname }}, {{ firstname }}</h3>
+    <h3> Remaining Balance: {{ market_value }} </h3>
+      <h3> Monthly Interest: {{ monthly_interest }} </h3>
+        <h3>  Due Date: {{ due_date }} </h3>
+        <h3> Status: {{ status }} </h3>
+      <ion-button style="float: right; margin-top:10px;" (click)="MarkAsPaid()">Mark as Fully paid</ion-button>
     </ion-card-content>
 
   </ion-card>
   <ion-card>
     <ion-list>
       <ion-item>
-        <ion-label position="fixed">Date</ion-label>
+        <ion-label position="fixed" >Date</ion-label>
         <ion-input [(ngModel)]="payment_date" type="date"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="fixed">Monthly Interest</ion-label>
+        <ion-label >Monthly Interest</ion-label>
         <ion-input [(ngModel)]="paid_interest" type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="fixed">Jewelry Amount</ion-label>
+        <ion-label>Jewelry Amount</ion-label>
         <ion-input [(ngModel)]="paid_jewelry_amount" type="number" placeholder="Deduct monthly interest"></ion-input>
       </ion-item>
-      <ion-button (click)="addPayment()">Add payment</ion-button>
+      <ion-item *ngIf="status==='FULLY PAID'">
+        <ion-button style="float: right; margin-right: 20px;margin-top:10px;" (click)="addPayment()" disabled="true">Add payment</ion-button>
+      </ion-item>
+      <ion-item *ngIf="status==='ACTIVE'">
+        <ion-button style="float: right; margin-right: 20px;margin-top:10px;" (click)="addPayment()">Add payment</ion-button>
+      </ion-item>
     </ion-list>
   </ion-card>
   

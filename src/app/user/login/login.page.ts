@@ -40,7 +40,12 @@ export class LoginPage implements OnInit {
         if(this.password != holder.password){
           alert('Email or password is incorrect');
         }else{
-          this.router.navigate(['/dashboard']);
+          if(holder.level == 1){
+            this.router.navigate(['/dashboard']);
+          }else{
+            this.router.navigate(['/active-loans', holder.user_id])
+          }
+          
         }
       }
       

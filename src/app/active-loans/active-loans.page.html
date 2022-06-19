@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>active_loans</ion-title>
+  <ion-toolbar class="back" >
+    <ion-buttons  slot="start">
+      <ion-back-button  class="btnBack" defaultHref="home">
+      </ion-back-button>
+      <ion-title>
+        Active Loans
+    </ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>  
+    <ion-card-header>
+      <ion-card-title>Loans</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let t of transaction">
+          <ion-label>
+          <h2>{{ t.Lastname }}</h2>
+          <h2>{{ t.Jewelry }}</h2>
+          <h3>{{ t.Loan_Date }}({{ t.Due_date }})</h3>
+          </ion-label>
+          <ion-button [routerLink]="['/active-payment', t.id]">View payment</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>

@@ -50,7 +50,16 @@ export class ApiService {
   getPayments(id){
     return this.http.get('http://localhost/pawning/payments.php?id='+id);
   }
+  getActiveLoans(id){
+    return this.http.get('http://localhost/pawning/active_loans.php?id='+id);
+  }
+  getActivePayments(id){
+    return this.http.get('http://localhost/pawning/active_payments.php?id='+id);
+  }
   updateTransaction(id, data){
     return this.http.put('http://localhost/pawning/updateTransaction.php?id='+id, data);
+  }
+  updateTransactionStatus(id, data){
+    return this.http.put('http://localhost/pawning/updateTransactionStatus.php?id='+id,data);
   }
 }

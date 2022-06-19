@@ -1,3 +1,57 @@
 ion-button{
     margin: 5px 5px 10px 15px;
 }
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+}
+.mid{
+   margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header{
+    height: 5%;
+    font-family: Staatliches-Regular !important;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: calc(5vw - 12px);
+}
+#btn-estimate{
+    float: right;
+}
+.btnReg{
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.header-icon{
+    color:white;
+}
+.none{
+   --background: clear;
+}
+ion-toolbar{
+    --background:var(--ion-color-danger);
+}
+ion-back-button{
+    color:white;
+}
+ion-button{
+    color:white;
+}
+ion-title{
+    color:white;
+    
+}
+
+ion-content{
+    --background: var(--ion-color-danger);
+}

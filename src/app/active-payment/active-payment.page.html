@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>active-payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let p of payments">
+        <ion-label>
+          Date: {{ p.date }} <br>
+          Market Value Deduction: {{ p.paid_amount }} <br>
+          Paid Interest: {{ p.paid_interest }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-content>
